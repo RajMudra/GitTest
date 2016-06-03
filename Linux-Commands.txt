@@ -29,7 +29,7 @@ find Path/to/directory -iname "filename"				//To search file in a directory or s
 mkdir -p directoryname							//Creates directory without error
 rm -rf directoryname							//Removes directory without error
 
-sudo arp-scan -l --interface=wlan0					//To check connected pcs in a network (Including IP Addresses)
+sudo arp-scan -l --interface=wlan0					//To check connected pcs in a network (Including IP Addresses & MAC address)
 
 //To copy using scp through shell script
 sshpass -p "destpassword" scp -o StrictHostKeyChecking=no path/to/filename username@ipaddr:/home/hostname/path/to/destination
@@ -46,4 +46,9 @@ omxplayer video.mp4							//To open/play video in Raspberry pi
 
 sudo minicom -C filename.txt						//To save minicom logs in a file
 
-date +%d-%m-%y-%T							//To get date & time. Can be use for file naming
+date +%d-%m-%y_%H-%M-%S							//To get date & time. Can be use for file naming
+
+vi /etc/fstab
+Write at the end of file
+	/dev/mmcblk0p3       /mnt/MyFiles       ext4    defaults        0       0	//To mount partition at OS startup
+
